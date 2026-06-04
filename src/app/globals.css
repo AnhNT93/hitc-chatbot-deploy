@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Be Vietnam Pro", "Inter", ui-serif, Georgia, serif;
+}
+
+html,
+body {
+  background: #fbfaf7;
+  color: #0f1623;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(47, 107, 255, 0.18);
+  color: #0f1623;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 10px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(15, 22, 35, 0.12);
+  border-radius: 999px;
+}
+.scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Soft ambient wash — keeps page feeling intentional, not template-white */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(45% 30% at 12% 8%, rgba(47, 107, 255, 0.10), transparent 65%),
+    radial-gradient(35% 25% at 92% 4%, rgba(255, 138, 0, 0.09), transparent 65%),
+    radial-gradient(30% 25% at 60% 95%, rgba(91, 141, 239, 0.07), transparent 65%);
+  z-index: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+.dot-1 { animation: pulse-dot 1.2s ease-in-out infinite; }
+.dot-2 { animation: pulse-dot 1.2s ease-in-out 0.15s infinite; }
+.dot-3 { animation: pulse-dot 1.2s ease-in-out 0.3s infinite; }
